@@ -12,14 +12,6 @@ $color-darkblue: #006072;
 $color-darkgrey: #555555;
 $color-lightergrey: #dedcdce6;
 
-textarea,
-input.text,
-input[type="text"],
-input[type="button"],
-input[type="submit"],
-.input-checkbox {
-border-radius: 0;
-}
 
 @media screen and (prefers-reduced-motion: no-preference) {
   html, body {
