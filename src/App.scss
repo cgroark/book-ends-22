@@ -1,0 +1,2055 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jura&display=swap");
+$color-purple: #9B326E;
+$color-blue: #008299;
+$color-lightgrey: #B8B8B8;
+$color-lightpurple: #a83777;
+$color-darkblue: #006072;
+$color-darkgrey: #555555;
+$color-lightergrey: #dedcdce6;
+@media screen and (prefers-reduced-motion: no-preference) {
+  html, body {
+    scroll-behavior: smooth;
+  }
+}
+
+div.App article {
+  max-width: 1100px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+div.App article#layout {
+  min-height: 60vh;
+}
+
+.welcome {
+  margin-top: 50px !important;
+  text-align: left;
+}
+
+.welcome h2 {
+  border-bottom: solid 6px #006072;
+  color: #9B326E;
+  padding: 0 0 4px 0;
+  font-size: 2.2rem;
+  font-family: 'Bungee Inline', cursive;
+}
+
+.welcome .col-md-7 h2 {
+  margin: 30px 0;
+}
+
+.welcome img {
+  max-width: 90%;
+}
+
+.welcome p {
+  font-size: 1.3em;
+}
+
+.welcome a {
+  color: #006072;
+  text-decoration: underline;
+}
+
+.welcome .welcome-top {
+  background-color: #9B326E;
+  color: white;
+  padding: 20px;
+}
+
+.welcome .welcome-top h1 {
+  font-family: 'Bungee Inline', cursive;
+}
+
+.welcome .welcome-top a {
+  color: white;
+}
+
+.welcome #current-home .row .col-6 {
+  margin-top: 10px;
+}
+
+.welcome #current-home .row .col-6:first-of-type {
+  background-color: #006072;
+  color: white;
+  padding: 20px;
+}
+
+.welcome #current-home .row .col-6 h3 {
+  font-family: 'Bungee Inline', cursive;
+}
+
+.welcome #best-sellers p {
+  margin-bottom: 0;
+  font-size: .9rem;
+}
+
+.welcome #best-sellers h3 {
+  background-color: #9B326E;
+  color: white;
+  padding: 5px 10px;
+}
+
+.welcome #current-home > div {
+  padding: 10px 15px;
+}
+
+.welcome .accordion .card .card-header .btn-link.view-more {
+  color: #006072 !important;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+body {
+  margin-bottom: 50px;
+  font-family: 'Jura', sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+ monospace;
+}
+
+.App-header {
+  background-image: url(./images/book-pile.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 260px;
+  width: 100%;
+  text-align: center;
+  padding-top: 6vh;
+  color: white;
+}
+
+.App-header h1 {
+  font-size: 6.5rem;
+  font-family: 'Bungee Shade', cursive;
+}
+
+.main-body {
+  padding: 0 10px;
+  margin-top: 20px;
+}
+
+.main-body .main-top-section {
+  background-color: #006072;
+  color: white;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.main-body .main-top-section #friends {
+  text-align: center;
+}
+
+.main-body .main-top-section h1 {
+  font-size: 3.5rem;
+  font-family: 'Bungee Inline', cursive;
+}
+
+.main-body h3 {
+  margin-top: 15px;
+}
+
+.main-body h2 {
+  background-color: #006072;
+  color: white;
+  padding: 7px 12px 10px;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  font-family: 'Bungee Inline', cursive;
+}
+
+.main-body hr {
+  border-top: 2px solid #9B326E;
+}
+
+.main-body #currently-reading, .main-body #finished, .main-body #want-to-read {
+  padding-top: 30px;
+}
+
+.main-body p {
+  font-size: 1.5em;
+}
+
+.main-body .sign-widget {
+  z-index: 2000;
+  position: absolute;
+  top: 317px;
+  right: calc(((100vw - 1100px) / 2) + 35px);
+  padding: 20px;
+  border: solid 2px black;
+  width: 290px;
+  background-color: #dedcdce6;
+}
+
+.main-body .sign-widget .submit-form {
+  padding: 0;
+}
+
+.main-body .sign-widget .submit-form label {
+  text-align: center;
+}
+
+.main-body .sign-widget p {
+  font-size: 1.2em;
+}
+
+.main-body .sign-widget .div-button {
+  width: 130px;
+  font-size: 1em;
+  border: 3px solid #dedcdce6;
+}
+
+.main-body .sign-widget .div-button:hover {
+  width: 130px;
+  font-size: 1em;
+  border: 3px solid #9B326E;
+}
+
+.main-body div.find-again div {
+  text-align: center;
+  margin: 20px;
+}
+
+.main-body div.find-again div a {
+  background-color: #006072;
+  color: white;
+  padding: 6px 10px 8px;
+  text-decoration: none;
+  border: 2px solid white;
+}
+
+.main-body div.find-again div a:hover {
+  border: 2px solid #006072;
+  color: white;
+  text-decoration: none;
+}
+
+.main-body #complete-book.render {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: 0;
+  transition: 0;
+  height: 0;
+}
+
+.main-body #complete-book.show {
+  visibility: visible;
+  opacity: 1;
+  text-align: center;
+  border: solid 3px #9B326E;
+  padding: 12px 10px 10px;
+  width: 300px;
+  background-color: #dedcdce6;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  position: absolute;
+  min-height: 180px;
+  top: 300px;
+  left: 50%;
+  margin-left: -150px;
+  z-index: 10000000;
+}
+
+.main-body #complete-book.show h4 {
+  font-weight: 700;
+}
+
+.feed-section {
+  padding: 10px;
+  border-bottom: 3px solid #9B326E;
+  margin-bottom: 20px;
+}
+
+.feed-section .row {
+  margin-bottom: 20px;
+}
+
+.feed-section .row i.fa {
+  font-size: 5rem;
+}
+
+.feed-section .reading-now {
+  background-color: #006072;
+  color: white;
+  padding: 20px;
+  margin-top: 0;
+}
+
+.feed-section .reading-now p {
+  font-size: 1.2em;
+}
+
+.feed-section .reading-now h4 {
+  font-size: 1.3rem;
+}
+
+.feed-section .last-read {
+  background-color: #9B326E;
+  color: white;
+  padding: 20px;
+  margin-top: 0;
+}
+
+.feed-section .last-read p {
+  font-size: 1.2em;
+}
+
+.feed-section .last-read h4 {
+  font-size: 1.3rem;
+}
+
+.feed-friend {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.feed-friend a {
+  color: #006072;
+  padding: 6px 10px 8px;
+  text-decoration: none;
+  border: 3px solid #006072;
+}
+
+.feed-friend a:hover {
+  border: 2px solid white;
+  background-color: #006072;
+  color: white;
+  text-decoration: none;
+}
+
+.page-nav {
+  list-style: none;
+  padding: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  display: block;
+  top: 0;
+  background: white;
+  z-index: 1000;
+  border-bottom: solid 6px #006072;
+  margin-top: 10px;
+}
+
+.page-nav ul {
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.page-nav ul li {
+  display: inline-block;
+}
+
+.page-nav ul li a {
+  padding: 0 10px 0 0;
+  color: #006072;
+  border-bottom: none;
+  font-size: 1.25em;
+  text-decoration: none;
+}
+
+.page-nav ul li a:hover {
+  color: #008299;
+  border-bottom: none;
+  text-decoration: none;
+}
+
+.page-nav ul li.is-current a {
+  color: #9B326E;
+}
+
+@media only screen and (max-width: 550px) {
+  #page-nav ul li a {
+    padding: 0 3px 0 0;
+    font-size: .9em;
+  }
+  .page-nav ul li a {
+    font-size: 1em;
+    padding: 0 5px 0 0;
+  }
+}
+
+.login {
+  text-align: center;
+}
+
+.login .error {
+  color: red;
+}
+
+.div-button {
+  text-align: center;
+  width: 230px;
+  margin: auto;
+  padding: 10px 12px 12px;
+  background-color: #9B326E;
+  font-size: 1.3em;
+  font-weight: bold;
+  border: 3px solid white;
+  color: white;
+}
+
+.found-friend button, .found-friend a {
+  width: 230px;
+  display: inline-block;
+  padding: 4px 20px 6px;
+  background-color: white;
+  font-size: .8em;
+  font-weight: bold;
+  border: 3px solid #9B326E;
+  color: #9B326E;
+  margin: 20px 10px;
+}
+
+.div-button:hover {
+  border: 3px solid #9B326E;
+  cursor: pointer;
+}
+
+.found-friend button:hover, .found-friend a:hover {
+  background-color: #9B326E;
+  color: white;
+  text-decoration: none;
+}
+
+.friend-results {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.navigation {
+  text-align: right;
+}
+
+.navigation a {
+  margin: 0 4px;
+  font-size: 1.3em;
+  display: inline-block;
+  padding: 10px;
+  color: #9B326E !important;
+  border-bottom: 3px solid white;
+  text-decoration: none;
+}
+
+.navigation a:hover {
+  border-bottom: 3px solid #006072;
+  text-decoration: none;
+  color: #9B326E;
+}
+
+.navigation a.active {
+  border-bottom: 3px solid #9B326E;
+  text-decoration: none;
+  color: #9B326E;
+}
+
+a {
+  color: #008299;
+  font-weight: bold;
+}
+
+a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.thrift-link {
+  font-size: 1.4em;
+  padding: 0;
+  color: #9B326E;
+  border-bottom: 2px solid white;
+}
+
+.book-card {
+  padding: 10px 15px;
+  border-bottom: dashed 1px black;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.book-card p {
+  margin-bottom: 0;
+  font-size: 1.4rem;
+}
+
+.book-card p.card-smaller {
+  font-size: 1.2rem;
+}
+
+.book-card img {
+  max-width: 85px;
+  padding-right: 10px;
+}
+
+.book-card .thrift-link {
+  font-size: 1.4em;
+  padding: 0;
+  color: #9B326E;
+  border-bottom: 2px solid white;
+}
+
+.book-card .row .col-sm-4 i {
+  font-size: 85px;
+}
+
+.book-card .accordion .card .card-header .btn-link {
+  color: #666 !important;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.book-card .accordion .card p {
+  font-size: .8em;
+}
+
+.book-card .col-4 i {
+  font-size: 80px;
+}
+
+.card .card-body {
+  padding: 0.25rem !important;
+}
+
+h2#friend-name {
+  font-size: 2.4rem;
+  border-top: none;
+  font-weight: 700;
+  background-color: #9B326E;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 576px) {
+  .book-card img {
+    margin-top: 10px;
+    padding: 0;
+    max-width: 100%;
+  }
+}
+
+#friend-form {
+  text-align: center;
+}
+
+#booklist h3, .friend-results h3, .reading-now h3 {
+  margin: 0 0 10px;
+  padding: 0 15px 5px 0;
+  color: #006072;
+}
+
+.accordion .card {
+  border: none;
+}
+
+.accordion .card .card-header {
+  padding: 0;
+  background-color: transparent !important;
+}
+
+.accordion .card .card-header .btn {
+  padding: 0;
+  text-align: left;
+}
+
+.accordion .card .card-header .btn .focus {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.accordion .card .card-header .btn:focus {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.accordion .card .card-header .btn-link {
+  color: #333 !important;
+  font-size: 1.2rem;
+}
+
+.accordion .card .card-header button.btn:after {
+  content: '+';
+}
+
+.submit-form {
+  text-align: left;
+  border: solid #B8B8B8 1px;
+  padding: 20px;
+}
+
+.login .submit-form {
+  text-align: center;
+  border: none;
+  padding: 20px;
+}
+
+form .react-datepicker__input-container input {
+  font-size: 1.5em;
+}
+
+form .col-md-4 {
+  text-align: left;
+}
+
+form input {
+  height: 1.5em;
+}
+
+form #input-section {
+  text-align: center;
+}
+
+form input[type="submit"] {
+  display: block;
+  margin: 30px auto 0;
+  width: 200px;
+  height: 3em;
+  background-color: #9B326E;
+  font-size: 1em;
+  font-weight: bold;
+  border: 3px solid white;
+  color: white;
+}
+
+form input[type="submit"]:hover {
+  border: 3px solid #9B326E;
+  cursor: pointer;
+}
+
+form input[type="text"] {
+  width: 100%;
+}
+
+form label {
+  text-align: left;
+  color: #9B326E;
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+input[type="submit"].manual {
+  font-size: 1em;
+  margin: 20px auto;
+  display: block;
+  background: transparent;
+  border: none;
+  text-decoration: underline;
+  font-weight: 700;
+  border-top: 40px;
+}
+
+input[type="submit"].manual:hover {
+  text-decoration: none;
+  color: #555555;
+}
+
+input[type="submit"].delete {
+  float: left;
+  border: none;
+  background-color: transparent;
+  color: #333;
+  border-bottom: solid red 4px;
+  width: 180px;
+  height: inherit;
+  margin-top: -50px;
+}
+
+input[type="submit"].delete.check {
+  float: none;
+  display: inline-block;
+  margin: 20px;
+}
+
+input[type="submit"].delete:hover {
+  color: #333;
+  border: none;
+  border-bottom: solid red 9px;
+}
+
+#delete-section {
+  text-align: center;
+}
+
+.close-button {
+  text-align: right;
+  padding: 0px 10px 0;
+}
+
+.close-button button {
+  margin-bottom: 3px;
+  border: solid 2px white;
+  padding: 0 11px 2px;
+  background-color: #9B326E;
+  color: white;
+}
+
+.close-button button:hover {
+  border: solid 2px #9B326E;
+}
+
+#close-form {
+  text-align: right;
+}
+
+#close-form button {
+  margin-bottom: -10px;
+  border: solid 2px white;
+  padding: 2px 15px 5px;
+  background-color: #9B326E;
+  color: white;
+}
+
+#close-form button:hover {
+  border: solid 2px #9B326E;
+}
+
+form.loading label {
+  color: #B8B8B8;
+}
+
+form.loading input[type="submit"] {
+  background-color: #B8B8B8;
+  border: 3px solid #B8B8B8;
+}
+
+input#edit, input.add-button {
+  padding: 6px 10px 8px;
+  background-color: #9B326E;
+  font-size: 0.8em;
+  font-weight: bold;
+  border: 3px solid white;
+  color: white;
+}
+
+input.add-button {
+  display: block;
+  margin: 40px auto 20px;
+  font-size: 1em;
+  width: 200px;
+  white-space: normal;
+}
+
+div.search-bar {
+  text-align: center;
+  border-bottom: 2px dashed black;
+  margin-bottom: 30px;
+}
+
+div.search-bar input {
+  padding: 6px 10px 8px;
+  background-color: #9B326E;
+  font-size: 0.8em;
+  font-weight: bold;
+  border: 3px solid white;
+  color: white;
+  margin: 10px auto 20px;
+  font-size: 1em;
+  width: 200px;
+}
+
+input.add-button.search {
+  width: 100%;
+}
+
+input#edit:hover, input.add-button:hover, .search-bar input:hover {
+  border: 3px solid #9B326E;
+  cursor: pointer;
+}
+
+.reading-now {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.reading-now h3 {
+  margin-top: 0;
+}
+
+.reading-now img {
+  max-width: 110px;
+}
+
+.reading-now .col-5 i {
+  font-size: 85px;
+}
+
+.reading-now .summary-reading button {
+  font-weight: 400;
+}
+
+.reading-now .summary-reading p {
+  font-size: 1.2em;
+}
+
+.reading-now .summary-reading .collapse p, .reading-now .summary-reading .collapsing p {
+  font-size: 1em;
+}
+
+.searchfriend-widget h2 {
+  text-align: center;
+}
+
+.found-friend {
+  margin-bottom: 20px;
+  font-size: 1.3em;
+}
+
+.found-friend p {
+  font-size: 1em;
+}
+
+.found-friend hr {
+  width: 70%;
+}
+
+#search-results .col-md-6 div.eachbook {
+  padding: 10px;
+  border-bottom: 2px solid #9B326E;
+}
+
+#search-results h3 {
+  color: #9B326E;
+  font-weight: 700;
+}
+
+#search-results p {
+  font-size: 1.2em;
+  margin-bottom: 0.5rem;
+}
+
+#search-results img {
+  max-width: 100%;
+}
+
+form.search-form input[type="text"] {
+  display: block;
+  height: 2em;
+  width: 80%;
+  margin: auto;
+}
+
+.required {
+  color: red;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 1170px) {
+  .main-body .sign-widget {
+    right: 42px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #home-breadcrumbs {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  div.App article {
+    padding: 0 10px;
+  }
+  .welcome {
+    margin-top: 20px !important;
+  }
+  .welcome .col-md-4 i {
+    float: none;
+  }
+  .welcome h2 {
+    font-size: 1.9rem;
+  }
+  .welcome #best-sellers h3 {
+    font-size: 1.6rem;
+  }
+  .welcome .welcome-top {
+    padding: 15px;
+  }
+  .welcome .welcome-top h1 {
+    font-size: 2rem;
+  }
+  .welcome .welcome-top p {
+    font-size: 1.1rem;
+  }
+  .welcome #current-home .row .col-6 h3 {
+    font-size: 1.1rem;
+  }
+  .welcome #current-home .row .col-6:first-of-type {
+    padding: 15px;
+  }
+  .welcome .feed-section .reading-now, .welcome .feed-section .last-read {
+    padding: 15px;
+  }
+  .welcome .feed-section .reading-now h4, .welcome .feed-section .last-read h4, .welcome .feed-section .reading-now p, .welcome .feed-section .last-read p {
+    font-size: 1.1rem;
+  }
+  .App-header {
+    padding-top: 3vh;
+    height: 140px;
+  }
+  .App-header h1 {
+    font-size: 3.9rem;
+    text-shadow: 2px 2px black;
+  }
+  .navigation a {
+    margin: 0 6px;
+    font-size: 1em;
+    display: inline-block;
+    padding: 4px;
+    color: #9B326E;
+    border-bottom: 2px solid white;
+    text-decoration: none;
+  }
+  input[type="submit"].delete {
+    margin-top: 30px;
+    float: none;
+  }
+  .reading-now .col-sm-6 {
+    border-bottom: dashed 1px black;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+  }
+  .reading-now img {
+    max-width: 80px;
+  }
+  .main-body h1 {
+    font-size: 2.2rem;
+  }
+  .main-body h2, .main-body h2#friend-name {
+    font-size: 1.4rem;
+  }
+  .main-body h3 {
+    font-size: 1.2rem;
+  }
+  .main-body h4 {
+    font-size: 1.1rem;
+  }
+  .main-body .sign-widget {
+    top: 185px;
+  }
+  .main-body .main-top-section h1 {
+    font-size: 2rem;
+  }
+  .main-body #complete-book.show {
+    width: 250px;
+    margin-left: -125px;
+  }
+  .main-body #complete-book.show h4 {
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .reading-now img {
+    max-width: 100%;
+  }
+  .App-header {
+    height: 100px;
+  }
+  .App-header h1 {
+    font-size: 2.9rem;
+  }
+  .main-body .sign-widget {
+    top: 150px;
+  }
+}
+
+@media only screen and (max-width: 462px) {
+  .navigation a {
+    margin: 0px 3.6px 0 0;
+    font-size: .8em;
+    padding: 3px;
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  .navigation a {
+    margin: 0px 4.6px 0 0;
+    font-size: .7em;
+    padding: 3px 0 3px;
+  }
+  .App-header {
+    height: 100px;
+  }
+  .App-header h1 {
+    font-size: 2.5rem;
+  }
+}
+
+footer {
+  height: 50px;
+  background: #006072;
+  margin-top: 50px;
+  width: 100%;
+  color: white;
+  text-align: right;
+  font-size: 1.3em;
+}
+
+footer .footer div {
+  padding: 10px 0;
+}
+
+.progress-bar3 {
+  height: 18px;
+  border-radius: 4px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#9B326E), color-stop(#B8B8B8), to(#008299));
+  background-image: linear-gradient(to right, #9B326E, #B8B8B8, #008299);
+  -webkit-transition: 0.4s linear;
+  transition: 0.4s linear;
+  -webkit-transition-property: width, background-color;
+  transition-property: width, background-color;
+}
+
+.progress-infinite .progress-bar3 {
+  width: 100%;
+  background-image: -webkit-gradient(linear, left top, right top, from(#a83777), color-stop(#9B326E), color-stop(#B8B8B8), color-stop(#008299), to(#006072));
+  background-image: linear-gradient(to right, #a83777, #9B326E, #B8B8B8, #008299, #006072);
+  -webkit-animation: colorAnimation 1s infinite;
+          animation: colorAnimation 1s infinite;
+}
+
+@-webkit-keyframes colorAnimation {
+  0% {
+    background-image: -webkit-gradient(linear, left top, right top, from(#a83777), color-stop(#9B326E), color-stop(#B8B8B8), color-stop(#008299), to(#006072));
+    background-image: linear-gradient(to right, #a83777, #9B326E, #B8B8B8, #008299, #006072);
+  }
+  20% {
+    background-image: -webkit-gradient(linear, left top, right top, from(#006072), color-stop(#a83777), color-stop(#9B326E), color-stop(#B8B8B8), to(#008299));
+    background-image: linear-gradient(to right, #006072, #a83777, #9B326E, #B8B8B8, #008299);
+  }
+  40% {
+    background-image: -webkit-gradient(linear, left top, right top, from(#008299), color-stop(#006072), color-stop(#a83777), color-stop(#9B326E), to(#B8B8B8));
+    background-image: linear-gradient(to right, #008299, #006072, #a83777, #9B326E, #B8B8B8);
+  }
+  60% {
+    background-image: -webkit-gradient(linear, left top, right top, from(#B8B8B8), color-stop(#008299), color-stop(#006072), color-stop(#a83777), to(#9B326E));
+    background-image: linear-gradient(to right, #B8B8B8, #008299, #006072, #a83777, #9B326E);
+  }
+  100% {
+    background-image: -webkit-gradient(linear, left top, right top, from(#9B326E), color-stop(#B8B8B8), color-stop(#008299), color-stop(#006072), to(#a83777));
+    background-image: linear-gradient(to right, #9B326E, #B8B8B8, #008299, #006072, #a83777);
+  }
+}
+
+@keyframes colorAnimation {
+  0% {
+    background-image: -webkit-gradient(linear, left top, right top, from(#a83777), color-stop(#9B326E), color-stop(#B8B8B8), color-stop(#008299), to(#006072));
+    background-image: linear-gradient(to right, #a83777, #9B326E, #B8B8B8, #008299, #006072);
+  }
+  20% {
+    background-image: -webkit-gradient(linear, left top, right top, from(#006072), color-stop(#a83777), color-stop(#9B326E), color-stop(#B8B8B8), to(#008299));
+    background-image: linear-gradient(to right, #006072, #a83777, #9B326E, #B8B8B8, #008299);
+  }
+  40% {
+    background-image: -webkit-gradient(linear, left top, right top, from(#008299), color-stop(#006072), color-stop(#a83777), color-stop(#9B326E), to(#B8B8B8));
+    background-image: linear-gradient(to right, #008299, #006072, #a83777, #9B326E, #B8B8B8);
+  }
+  60% {
+    background-image: -webkit-gradient(linear, left top, right top, from(#B8B8B8), color-stop(#008299), color-stop(#006072), color-stop(#a83777), to(#9B326E));
+    background-image: linear-gradient(to right, #B8B8B8, #008299, #006072, #a83777, #9B326E);
+  }
+  100% {
+    background-image: -webkit-gradient(linear, left top, right top, from(#9B326E), color-stop(#B8B8B8), color-stop(#008299), color-stop(#006072), to(#a83777));
+    background-image: linear-gradient(to right, #9B326E, #B8B8B8, #008299, #006072, #a83777);
+  }
+}
+
+@media screen and (prefers-reduced-motion: no-preference){
+  html, body {
+      scroll-behavior: smooth;
+  }
+}
+div.App {
+  article{
+    max-width: 1100px;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+  article#layout{
+    min-height: 60vh;
+  }
+}
+.accordion .card .card-header button{
+  font-size: 1.1rem;
+  background-color: #fff;
+  border: none;
+  padding: 5px 0 0;
+  &:focus{
+    outline: none;
+  }
+  &.closed:after{
+    content: " +"
+  }
+  &.open:after{
+    content: " -"
+  }
+}
+.welcome{
+  margin-top: 50px !important;
+  text-align: left;
+  h2{
+    border-bottom: solid 6px $color-darkblue;
+    color: $color-purple;
+    padding: 0 0 4px 0;
+    font-size: 2.2rem;
+    font-family: 'Bungee Inline', cursive;
+  }
+  .col-md-7 h2{
+    margin: 30px 0;
+  }
+  img{
+    max-width: 90%;
+  }
+  p{
+    font-size: 1.3em
+  }
+  a{
+    color: $color-darkblue;
+    text-decoration: underline;
+  }
+  .welcome-top{
+    background-color: $color-purple;
+    color: white;
+    padding: 20px;
+    h1{
+      font-family: 'Bungee Inline', cursive;
+    }
+    a{
+      color: white;
+    }
+  }
+  #current-home .row {
+    .col-6{
+      margin-top: 10px;
+      &:first-of-type{
+        background-color: $color-darkblue;
+        color: white;
+        padding: 20px;
+      }
+      h3{
+        font-family: 'Bungee Inline', cursive;
+      }
+    }
+  }
+  #best-sellers{
+    p{
+      margin-bottom: 0;
+      font-size: .9rem;
+    }
+    h3{
+      background-color: $color-purple;
+      color: white;
+      padding: 5px 10px;
+    }
+  }
+  #current-home > div{
+    padding: 10px 15px;
+  }
+
+  #best-sellers .bestsellers{
+    margin-bottom: 10px;
+  }
+  #best-sellers > .accordion > .card > .card-header > button {
+    color: $color-darkblue !important;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-top: 20px;
+  }
+}
+body {
+  margin-bottom: 50px;
+  font-family: 'Jura', sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.App-header {
+  background-image: url(./images/book-pile.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 260px;
+  width: 100%;
+  text-align: center;
+  padding-top: 6vh;
+  color: white;
+  h1{
+    font-size: 6.5rem;
+    font-family: 'Bungee Shade', cursive;
+  }
+}
+.main-body{
+  padding: 0 10px;
+  margin-top: 20px;
+  .main-top-section{
+    background-color: $color-darkblue;
+    color: white;
+    padding: 20px;
+    margin-bottom: 10px;
+    #friends{
+      text-align: center;
+    }
+    h1{
+        font-size: 3.5rem;
+        font-family: 'Bungee Inline', cursive;
+      }
+  }
+  h3{
+    margin-top: 15px;
+  }
+  h2{
+    background-color: $color-darkblue;
+    color: white;
+    padding: 7px 12px 10px;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    font-family: 'Bungee Inline', cursive;
+  }
+  hr{
+    border-top: 2px solid $color-purple;
+  }
+  #currently-reading,#finished, #want-to-read {
+    padding-top: 30px;
+  }
+  #currently-reading > .row,#finished > .row, #want-to-read > .row {
+    padding: 0 15px;
+  }
+  p{
+    font-size: 1.5em;
+  }
+  .sign-widget{
+    z-index: 2000;
+    position: absolute;
+    top: 317px;
+    right: calc(((100vw - 1100px) / 2) + 35px);
+    padding: 20px;
+    border: solid 2px black;
+    width: 290px;
+    background-color: $color-lightergrey;
+    .submit-form{
+      padding: 0;
+      label{
+        text-align: center;
+      }
+    }
+    p{
+      font-size: 1.2em;
+    }
+    .div-button{
+      width: 130px;
+      font-size: 1em;
+      border: 3px solid $color-lightergrey; 
+    }
+    .div-button:hover{
+      width: 130px;
+      font-size: 1em;
+      border: 3px solid $color-purple; 
+    }
+  }
+  div.find-again div {
+    text-align: center;
+    margin: 20px;
+    a{
+      background-color: $color-darkblue;
+      color: white;
+      padding: 6px 10px 8px;
+      text-decoration: none;
+      border: 2px solid white;
+      &:hover{
+        border: 2px solid $color-darkblue;
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+  #complete-book.render {
+    visibility: hidden;
+    opacity: 0;
+    transition: 0;
+    height: 0;
+  }
+  #complete-book.show{
+    visibility: visible;
+    opacity: 1;
+    text-align: center;
+    border: solid 3px $color-purple;
+    padding: 12px 10px 10px;
+    width: 300px;
+    background-color: #dedcdce6;
+    transition: all 1s ease;
+    position: absolute;
+    min-height: 180px;
+    top: 300px;
+    left: 50%;
+    margin-left: -150px;
+    z-index: 10000000;
+    h4{
+      font-weight: 700;
+    }
+  }
+} 
+.feed-section{
+  padding: 10px;
+  border-bottom: 3px solid $color-purple;
+  margin-bottom: 20px;
+  .row{
+    margin-bottom: 20px;
+    i.fa{
+      font-size: 5rem;
+    }
+  }
+  .reading-now{
+    background-color: $color-darkblue;
+    color: white;
+    padding: 20px;
+    margin-top: 0;
+    p{
+      font-size: 1.2em;
+      }
+    h4{
+      font-size: 1.6rem;
+    }
+  }
+  .last-read{
+    background-color: $color-purple;
+    color: white;
+    padding: 20px;
+    margin-top: 0;
+    p{
+      font-size: 1.2em;
+      }
+      h4{
+        font-size: 1.6rem;
+      }
+    }
+  }
+  .feed-friend{
+    text-align: center;
+    margin-bottom: 10px;
+    a{
+      color: $color-darkblue;
+      padding: 6px 10px 8px;
+      text-decoration: none;
+      border: 3px solid $color-darkblue;
+      &:hover{
+        border: 2px solid white;
+        background-color: $color-darkblue;
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+
+.page-nav{
+  list-style: none;
+  padding: 0;
+  position: sticky;
+  display: block;
+  top: 0;
+  background: white;
+  z-index: 1000;
+  border-bottom: solid 6px $color-darkblue;
+  margin: 10px -5px 0;
+  ul{
+    padding: 0;
+    margin-bottom: 0;
+    li{
+      display: inline-block;
+      a{
+        padding: 0 10px 0 0;
+        color: $color-darkblue;
+        border-bottom: none;
+        font-size: 1.25em;
+        text-decoration: none;
+        &:hover{
+          color: $color-blue;
+          border-bottom: none;
+          text-decoration: none;
+        }
+      }
+    }
+    li.is-current a{
+      color: $color-purple;
+    }
+  } 
+}
+
+@media only screen and (max-width: 550px){
+  #page-nav ul li a{
+    padding: 0 3px 0 0;
+    font-size: .9em;
+  }
+  .page-nav ul li a{
+    font-size: .8em;
+    padding: 0 5px 0 0;
+}
+}
+
+.login{
+  text-align: center;
+  .error{
+    color: red;
+  }
+}
+.div-button{
+  text-align: center;
+  width: 230px;
+  margin: auto;
+  padding: 10px 12px 12px;
+  background-color: $color-purple;
+  font-size: 1.3em;
+  font-weight: bold;
+  border: 3px solid white;
+  color: white;
+}
+.found-friend button, .found-friend a{
+  width: 230px;
+  display: inline-block;
+  padding: 4px 20px 6px;
+  background-color: white;
+  font-size: .8em;
+  font-weight: bold;
+  border: 3px solid $color-purple;
+  color: $color-purple;
+  margin: 20px 10px;
+}
+.div-button:hover{
+  border: 3px solid $color-purple;
+  cursor: pointer;
+}
+.found-friend button:hover, .found-friend a:hover{
+  background-color: $color-purple;
+  color: white;
+  text-decoration: none;
+}
+.friend-results{
+  margin-top: 15px;
+  text-align: center;
+}
+.navigation{
+    text-align: right;
+    button{
+      background-color: transparent;
+      border-left: none;
+      border-right: none;
+      border-top:none;
+      font-weight: bold;
+    }
+    a, button{
+      margin: 0 4px;
+      font-size: 1.3em;
+      display: inline-block;
+      padding: 10px;
+      color: $color-purple !important;
+      border-bottom: 3px solid white;
+      text-decoration: none;
+    }
+    a:hover, button:hover{
+      border-bottom: 3px solid $color-darkblue;
+      text-decoration: none;
+      color: $color-purple;
+    }
+    a.active, button.active{
+      border-bottom: 3px solid $color-purple;
+      text-decoration: none;
+      color: $color-purple;
+    }
+}
+a{
+  color: $color-blue;
+  font-weight: bold;
+}
+a:hover{
+  cursor: pointer;
+  text-decoration: underline;
+  
+}
+.thrift-link{
+  font-size: 1.4em;
+  padding: 0;
+  color: $color-purple;
+  border-bottom: 2px solid white;
+}
+.book-card {
+  padding: 10px 15px;
+  border-bottom: dashed 1px black;
+  text-align: left;
+  margin-bottom: 10px;
+  p{
+      margin-bottom: 0;
+      font-size: 1.4rem;
+  }
+  p.card-smaller{
+      font-size: 1.2rem;
+  }
+  img{
+    max-width: 85px;
+    padding-right: 10px;
+  }
+  .thrift-link{
+    font-size: 1.4em;
+    padding: 0;
+    color: $color-purple;
+    border-bottom: 2px solid white;
+  }
+  .row .col-sm-4 i{
+    font-size: 85px;
+  }
+  .accordion {
+    .card .card-header .btn-link{
+      color: #666 !important;
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
+    .card p{
+      font-size: .8em;
+    }
+  }
+  .col-4 i{
+    font-size: 80px;
+  }
+}
+.card .card-body{
+  padding: 0.25rem !important;
+}
+h2#friend-name{
+  font-size: 2.4rem;
+  border-top: none;
+  background-color: $color-purple;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+@media only screen and (max-width: 576px) {
+  .book-card img{
+    margin-top: 10px;
+    padding: 0;
+    max-width: 100%;
+  }
+}
+#friend-form{
+  text-align: center;
+}
+#booklist, .friend-results, .reading-now{
+  h3{
+    margin: 0 0 10px;
+    padding: 0 15px 5px 0;
+    color: $color-darkblue;
+  }
+}
+#booklist #finished .accordion.past-year-books {
+    border-bottom: 2px solid purple;
+    border-top: 2px solid purple;
+    margin-bottom: 10px;
+      > .card{
+        border-radius: 0;
+        > .card-header{
+          padding: 20px 10px;
+         > button{
+            font-size: 1.8rem;
+            font-weight: 900;
+            text-decoration: none;
+          }
+      }
+    } 
+}
+
+.accordion{
+  .card{
+    border: none;
+    .card-header{
+      padding: 0;
+      background-color: transparent !important;
+      .btn{
+        padding: 0;
+        text-align: left;
+        .focus{
+            box-shadow: none !important;
+        }
+        &:focus{   
+            box-shadow: none !important;
+        }
+      }
+      .btn-link{
+        color: #333 !important;
+        font-size: 1.2rem;
+      }
+      button.btn:after{
+        content: '+'
+      }
+    }
+  }
+}
+
+.submit-form{
+  text-align: left;
+  border: solid $color-lightgrey 1px;
+  padding: 20px;
+}
+.login .submit-form{
+  text-align: center;
+  border: none;
+  padding: 20px;
+}
+form{
+  .react-datepicker__input-container input{
+    font-size: 1.5em;
+  }
+  .col-md-4{
+    text-align: left;
+  }
+  input{
+    height: 1.5em;
+  }
+  #input-section{
+    text-align: center;
+  }
+  input[type="submit"]{
+    display: block;
+    margin: 30px auto 0;
+    width: 200px;
+    height: 3em;
+    background-color: $color-purple;
+    font-size: 1em;
+    font-weight: bold;
+    border: 3px solid white;
+    color: white;
+  }
+  input[type="submit"]:hover{
+    border: 3px solid $color-purple;
+    cursor: pointer;
+  }
+  input[type="text"]{
+    width: 100%;
+  }
+  label{
+    text-align: left;
+    color: $color-purple; 
+    font-size: 1.5rem;
+    margin-bottom: 0;
+  }
+}
+input[type="submit"].manual{
+  font-size: 1em;
+  margin: 20px auto;
+  display: block;
+  background: transparent;
+  border: none;
+  text-decoration: underline;
+  font-weight: 700;
+  border-top: 40px;
+}
+input[type="submit"].manual:hover{
+  text-decoration: none;
+  color: $color-darkgrey;
+}
+input[type="submit"].delete{
+  float: left;
+  border: none;
+  background-color: transparent;
+  color: #333;
+  border-bottom: solid $color-lightgrey 4px;
+  width: 180px;
+  height: inherit;
+  margin-top: -50px;
+}
+input[type="submit"].delete.check{
+  float: none;
+  display: inline-block;
+  margin: 20px;
+}
+input[type="submit"].delete:hover{
+  color: #333;
+  border: none;
+  border-bottom: solid red 4px;
+}
+#delete-section{
+  text-align: center;
+}
+input[type="submit"].unfollow-friend{
+  display: block;
+  margin: 20px auto;
+  border: none;
+  background: transparent;
+  border-bottom: solid 4px $color-lightergrey;
+}
+input[type="submit"].unfollow-friend:hover{
+  display: block;
+  margin: 20px auto;
+  border: none;
+  background: transparent;
+  border-bottom: solid 4px red;
+}
+.close-button{
+  text-align: right;
+  padding: 0px 10px 0;
+  button{
+    margin-bottom: 3px;
+    border: solid 2px white;
+    padding: 0 11px 2px;
+    background-color: $color-purple;
+    color: white;
+  }
+  button:hover{
+    border: solid 2px $color-purple;
+
+  }
+}
+#close-form{
+  text-align: right;
+  button{
+    margin-bottom: -10px;
+    border: solid 2px white;
+    padding: 2px 15px 5px;
+    background-color: $color-purple;
+    color: white;
+  }
+  button:hover{
+    border: solid 2px $color-purple;
+
+  }
+}
+
+form.loading {
+  label{
+      color: $color-lightgrey;
+      
+  }
+  input[type="submit"]{
+      background-color: $color-lightgrey;
+      border: 3px solid $color-lightgrey;
+  }
+}
+input#edit, input.add-button{
+  padding: 6px 10px 8px;
+  background-color: $color-purple;
+  font-size: 0.8em;
+  font-weight: bold;
+  border: 3px solid white;
+  color: white;
+}
+input.add-button{
+  display: block;
+  margin: 40px auto 20px;
+  font-size: 1em;
+  width: 200px;
+  white-space: normal;
+}
+div.search-bar{
+  text-align: center;
+  border-bottom: 2px dashed black;
+    margin-bottom: 30px;
+  input{
+    padding: 6px 10px 8px;
+    background-color: $color-purple;
+    font-size: 0.8em;
+    font-weight: bold;
+    border: 3px solid white;
+    color: white;
+    margin: 10px auto 20px;
+    font-size: 1em;
+    width: 200px;
+  }
+}
+input.add-button.search{
+  width: 100%;
+}
+input#edit:hover, input.add-button:hover, .search-bar input:hover{
+  border: 3px solid $color-purple;
+  cursor: pointer;
+}
+.reading-now{
+  margin-top: 20px;
+  text-align: left;
+  h3{
+    margin-top: 0;
+  }
+  img{
+    max-width: 110px;
+  }
+  .col-5 i{
+    font-size: 85px;
+  }
+  .summary-reading{
+    button{
+      font-weight: 400;
+    }
+    p{
+      font-size: 1.2em;
+    }
+    .collapse p, .collapsing p{
+      font-size: 1em;
+    }
+  }
+
+}
+.searchfriend-widget h2{
+  text-align: center;
+}
+
+.found-friend{
+  margin-bottom: 20px;
+  font-size: 1.3em;
+  p{
+      font-size: 1em;
+  }
+  hr{
+    width: 70%;
+  }
+}
+#search-results{
+  .col-md-6 div.eachbook{
+    padding: 10px;
+    border-bottom: 2px solid $color-purple;
+  }
+  h3{
+    color: $color-purple;
+    font-weight: 700;
+  }
+  p{
+    font-size: 1.2em;
+    margin-bottom: 0.5rem;
+  }
+  img{
+    max-width: 100%;
+  }
+}
+form.search-form{
+  input[type="text"]{
+    display: block;
+    height: 2em;
+    width: 80%;
+    margin: auto;
+  }
+}
+.required{
+    color: red;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 18px;
+}
+@media only screen and (max-width: 1170px) {
+  .main-body{
+    .sign-widget{
+      right: 42px;
+    }
+  }
+}
+@media only screen and (min-width: 768px) {
+  #home-breadcrumbs{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  div.App article {
+    padding: 0 10px;
+  }
+  .welcome{
+    margin-top: 20px !important;
+    .col-md-4 i{
+      float: none;
+    }
+    h2{
+      font-size: 1.9rem;
+    }
+    #best-sellers h3{
+      font-size: 1.6rem;
+    }
+    .welcome-top{
+      padding: 15px;
+      h1{
+        font-size: 2rem;
+      }
+      p{
+        font-size: 1.1rem;
+      }
+    }
+    #current-home .row {
+      .col-6 {
+        h3{
+          font-size: 1.1rem;
+        }
+        &:first-of-type{
+            padding: 15px;
+          }
+        }
+      }
+    .feed-section .reading-now, .feed-section .last-read {
+        padding: 15px;
+    }
+    .feed-section .reading-now h4, .feed-section .last-read h4, .feed-section .reading-now p, .feed-section .last-read p{
+      font-size: 1.1rem;
+    }
+  }
+  .App-header{
+    padding-top: 3vh;
+    height: 140px;
+    h1{
+      font-size: 3.9rem;
+      text-shadow: 2px 2px black;
+    }
+  } 
+  .navigation a{
+      margin: 0 6px;
+      font-size: 1em;
+      display: inline-block;
+      padding: 4px;
+      color: $color-purple;
+      border-bottom: 2px solid white;
+      text-decoration: none;
+    }
+  input[type="submit"].delete{
+      margin-top: 30px;
+      float: none;
+  }
+  .reading-now{
+    .col-sm-6{
+      border-bottom: dashed 1px black;
+      padding-bottom: 20px;
+      margin-bottom: 10px;
+    }
+    img {
+      max-width: 80px;
+    }
+  } 
+
+ .main-body {
+    h1 {
+      font-size: 2.2rem;
+    }
+    h2, h2#friend-name {
+      font-size: 1.4rem;
+    }
+   
+    h3{
+      font-size: 1.2rem;
+    }
+    h4{
+      font-size: 1.1rem;
+    }
+    .sign-widget{
+      top: 185px;
+    }
+    .main-top-section h1 {
+      font-size: 2rem;
+    }
+    #complete-book.show {
+      width: 250px;
+      margin-left: -125px;
+      h4{
+          font-size: 1.4rem;
+      }
+  }
+}
+#booklist #finished .accordion.past-year-books > .card > .card-header > button {
+  font-size: 1.3rem;
+  font-weight: 900;
+  text-decoration: none;
+}
+}
+@media only screen and (max-width: 576px) {
+  .reading-now img{
+    max-width: 100%;
+  }
+  .App-header{   
+    height: 100px; 
+    h1{
+      font-size: 2.9rem;
+    }
+  } 
+  .main-body { 
+    .sign-widget{
+    top: 150px;
+    }
+  }
+}
+
+@media only screen and (max-width: 462px) {
+  .navigation a{
+    margin: 0px 3.6px 0 0;
+    font-size: .8em;
+    padding: 3px;
+  }
+}
+@media only screen and (max-width: 370px) {
+  .navigation a{
+    margin: 0px 4.6px 0 0;
+    font-size: .7em;
+    padding: 3px 0 3px;
+  }
+  .App-header{   
+    height: 100px; 
+    h1{
+      font-size: 2.5rem;
+    }
+  } 
+}
+footer{
+  height: 50px;
+  background: $color-darkblue;
+  margin-top: 50px;
+  width: 100%;
+  color: white;
+  text-align: right;
+  font-size: 1.3em;
+  .footer div{
+    padding: 10px 0;
+  }
+}
+
+.progress-bar3 {
+  height: 18px;
+  border-radius: 4px;
+  background-image: 
+     linear-gradient(to right, 
+       $color-purple, $color-lightgrey, $color-blue);
+  transition: 0.4s linear;  
+  transition-property: width, background-color;    
+}
+
+.progress-infinite .progress-bar3 { 	 
+  width: 100%; 
+  background-image: 
+    linear-gradient(to right, $color-lightpurple, $color-purple, $color-lightgrey, $color-blue, $color-darkblue);
+  animation: colorAnimation 1s infinite;
+}
+
+@keyframes colorAnimation {
+  0% { 
+    background-image: 
+    linear-gradient(to right, $color-lightpurple, $color-purple, $color-lightgrey, $color-blue, $color-darkblue);
+  }
+  20% { 
+    background-image: 
+    linear-gradient(to right,  $color-darkblue, $color-lightpurple, $color-purple, $color-lightgrey, $color-blue);
+  }
+  40% { 
+    background-image: 
+    linear-gradient(to right, $color-blue, $color-darkblue, $color-lightpurple, $color-purple, $color-lightgrey );
+  }
+  60% { 
+    background-image: 
+    linear-gradient(to right, $color-lightgrey, $color-blue, $color-darkblue, $color-lightpurple, $color-purple );
+  }
+  100% { 
+    background-image: 
+    linear-gradient(to right, $color-purple, $color-lightgrey, $color-blue, $color-darkblue, $color-lightpurple);
+  }
+}
