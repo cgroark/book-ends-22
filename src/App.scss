@@ -566,11 +566,13 @@ h2#friend-name {
 .accordion .card .card-header {
   padding: 0;
   background-color: transparent !important;
+  color: black;
 }
 
 .accordion .card .card-header .btn {
   padding: 0;
   text-align: left;
+  color: black;
 }
 
 .accordion .card .card-header .btn .focus {
@@ -1097,6 +1099,7 @@ div.App {
   background-color: #fff;
   border: none;
   padding: 5px 0 0;
+  color: black;
   &:focus{
     outline: none;
   }
@@ -1575,6 +1578,7 @@ h2#friend-name{
             font-size: 1.8rem;
             font-weight: 900;
             text-decoration: none;
+            color: black;
           }
       }
     } 
@@ -1585,10 +1589,12 @@ h2#friend-name{
     border: none;
     .card-header{
       padding: 0;
+       color: black;
       background-color: transparent !important;
       .btn{
         padding: 0;
         text-align: left;
+        color: black;
         .focus{
             box-shadow: none !important;
         }
@@ -1974,6 +1980,7 @@ form.search-form{
   font-size: 1.3rem;
   font-weight: 900;
   text-decoration: none;
+  color: black;
 }
 }
 @media only screen and (max-width: 576px) {
