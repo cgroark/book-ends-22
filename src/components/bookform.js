@@ -896,7 +896,7 @@ class BookForm extends React.Component {
                         {!searchComplete &&
                          <div>
                              <h2>Search for books below</h2>
-                            <p>Find books and add them to your booklist</p>
+                            <p>Find books and add them to your booklist below</p>
                         </div>
                         }
                         
