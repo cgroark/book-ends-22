@@ -38,6 +38,7 @@ class BookForm extends React.Component {
             format: '',
             rating: '',
             bookid: '',
+            comment: 'null',
             editing: false,
             adding: false,
             form: false,
@@ -106,7 +107,8 @@ class BookForm extends React.Component {
                 rating: this.state.googleAPIData.values[i][8],              
                 overview: this.state.googleAPIData.values[i][9],               
                 image: this.state.googleAPIData.values[i][10],                
-                format: this.state.googleAPIData.values[i][11]
+                format: this.state.googleAPIData.values[i][11],
+                comment: this.state.googleAPIData.values[i][13],
             })
         }
         this.setState({
@@ -130,13 +132,11 @@ class BookForm extends React.Component {
                     let allIDs =[];
                     let userIDsReal = userData.filter(each => each.id !== 'null')
                     for(var b=0 ; b<userIDsReal.length ; b++){
-                        console.log(parseInt(userIDsReal[b].id.split('id=')[1]))
                         if(!isNaN(parseInt(userIDsReal[b].id.split('id=')[1]))){
                             allIDs.push(parseInt(userIDsReal[b].id.split('id=')[1]));
                         }
                     }
                     let sortedIDs= allIDs.sort((b, a) => b - a);
-                    console.log('sorted', sortedIDs)
                     let newID = sortedIDs[allIDs.length -1] + 1;
                     this.setState({currentID: newID})
                 }       
@@ -188,6 +188,7 @@ class BookForm extends React.Component {
             format: 'select-format', 
             rating: 'select-rating', 
             date: moment().toDate(),
+            comment: '',
             completeAdd: false,
             completeEdit: false
         })
@@ -239,7 +240,11 @@ class BookForm extends React.Component {
         })
     }
     handleSubmit = event => {
-        console.log(this.state.username+'id='+this.state.currentID)
+        if(this.state.comment === ''){
+            this.setState({
+                comment: 'null'
+            })
+        }
         if(this.state.status === 'select-status' || this.state.title === '' || this.state.author === '' ){
             event.preventDefault()
             if(this.state.status === 'select-status'){
@@ -257,7 +262,6 @@ class BookForm extends React.Component {
                     requiredAuthor: true
                 })
             }
-            
         }else{
             const dataSend = {
                 firstName: 'null',
@@ -272,7 +276,8 @@ class BookForm extends React.Component {
                 rating: this.state.rating,
                 overview: this.state.description,
                 image: this.state.imageUrl,
-                friends: 'null'
+                friends: 'null',
+                comment: this.state.comment
              }
         event.preventDefault()
         this.setState({
@@ -305,6 +310,7 @@ class BookForm extends React.Component {
                 requiredStatus: false,
                 tempTitle: tempTitle,
                 title: '', 
+                comment: 'null',
                 completeAdd: true
             })
             this.updatedGoogleAPI();
@@ -315,7 +321,6 @@ class BookForm extends React.Component {
     updateBook = (each, e) =>{  
         var updateRating = each.rating === 'select-rating' ? 'select-rating' : each.rating;
         var dateUpdating = each.status === 'Finished' ? moment(each.date).toDate() : moment().toDate();
-
         this.setState({
             books: false,
             currentlyReading: false,
@@ -333,8 +338,8 @@ class BookForm extends React.Component {
             status: each.status, 
             format: each.format,
             rating: updateRating,
-            bookid: each.id
-            
+            bookid: each.id,
+            comment: each.comment
         })
     }
     handleSubmitEdit = event => {
@@ -367,7 +372,8 @@ class BookForm extends React.Component {
                 rating: this.state.rating,
                 status: this.state.status,
                 format: this.state.format,
-                date: this.state.date
+                date: this.state.date,
+                comment: this.state.comment
             }
             event.preventDefault()
             this.setState({
@@ -388,6 +394,7 @@ class BookForm extends React.Component {
                     status: 'select-status', 
                     format: 'select-format', 
                     rating: 'select-rating', 
+                    comment: 'null',
                     date: moment().toDate(),
                     editing: false
                 })
@@ -444,6 +451,17 @@ class BookForm extends React.Component {
         this.setState({
             rating: e.target.value
         })
+    }
+    updateComment = (e) => {
+        if(e.target.value === ''){
+            this.setState({
+                comment: 'null'
+            })
+        }else{
+            this.setState({
+                comment: e.target.value
+            })
+        }
     }
     checkDelete = (e)=> {
         e.preventDefault();
@@ -558,6 +576,20 @@ class BookForm extends React.Component {
                 <div >
                     <h4>{each.author}</h4>
                 </div>
+                {each.comment !== 'null' &&
+                                <Accordion defaultActiveKey="0">
+                                        <Card>
+                                            <Card.Header>
+                                                <CustomToggle eventKey={each.id}>
+                                                    Comments
+                                                </CustomToggle>
+                                            </Card.Header>
+                                            <Accordion.Collapse eventKey={each.id}>
+                                                <Card.Body><p>{each.comment}</p></Card.Body>
+                                            </Accordion.Collapse>
+                                        </Card>
+                                </Accordion>  
+                            }
                     {!this.state.form &&
                         <div>
                             <label htmlFor="edit"></label>
@@ -605,6 +637,20 @@ class BookForm extends React.Component {
                             <h4>{each.author}</h4>
                             <p className="card-smaller">{each.status} {moment(each.date).isValid() ? moment(each.date).format('MMM D YYYY'): ""} </p>
                             <p className="card-smaller">{each.rating === 'select-rating' ? '' : each.rating} </p>
+                            {each.comment !== 'null' &&
+                                <Accordion defaultActiveKey="0">
+                                        <Card>
+                                            <Card.Header>
+                                                <CustomToggle eventKey={each.id}>
+                                                    Comments
+                                                </CustomToggle>
+                                            </Card.Header>
+                                            <Accordion.Collapse eventKey={each.id}>
+                                                <Card.Body><p>{each.comment}</p></Card.Body>
+                                            </Accordion.Collapse>
+                                        </Card>
+                                </Accordion>  
+                            }
                             {!this.state.form &&
                                 <div>
                                     <label htmlFor="edit"></label>
@@ -651,6 +697,20 @@ class BookForm extends React.Component {
                             <h4>{each.author}</h4>
                             <p className="card-smaller">{each.status} {moment(each.date).isValid() ? moment(each.date).format('MMM D YYYY'): ""} </p>
                             <p className="card-smaller">{each.rating === 'select-rating' ? '' : each.rating} </p>
+                            {each.comment !== 'null' &&
+                                <Accordion defaultActiveKey="0">
+                                        <Card>
+                                            <Card.Header>
+                                                <CustomToggle eventKey={each.id}>
+                                                    Comments
+                                                </CustomToggle>
+                                            </Card.Header>
+                                            <Accordion.Collapse eventKey={each.id}>
+                                                <Card.Body><p>{each.comment}</p></Card.Body>
+                                            </Accordion.Collapse>
+                                        </Card>
+                                </Accordion>  
+                            }
                             {!this.state.form &&
                                 <div>
                                     <label htmlFor="edit"></label>
@@ -697,6 +757,20 @@ class BookForm extends React.Component {
                             <h4>{each.author}</h4>
                             <p className="card-smaller">{each.status} {moment(each.date).isValid() ? moment(each.date).format('MMM D YYYY'): ""} </p>
                             <p className="card-smaller">{each.rating === 'select-rating' ? '' : each.rating} </p>
+                            {each.comment !== 'null' &&
+                                <Accordion defaultActiveKey="0">
+                                        <Card>
+                                            <Card.Header>
+                                                <CustomToggle eventKey={each.id}>
+                                                    Comments
+                                                </CustomToggle>
+                                            </Card.Header>
+                                            <Accordion.Collapse eventKey={each.id}>
+                                                <Card.Body><p>{each.comment}</p></Card.Body>
+                                            </Accordion.Collapse>
+                                        </Card>
+                                </Accordion>  
+                            }
                             {!this.state.form &&
                                 <div>
                                     <label htmlFor="edit"></label>
@@ -834,7 +908,7 @@ class BookForm extends React.Component {
     }
   
     render(){
-    const { completeAdd, completeEdit, format, checking, submitting, author, title, status, sortedData, date, query, rating, searchComplete, searchError, searchForm, searchloading, form, books, currentlyReading, searchButton} = this.state;
+    const { completeAdd, completeEdit, format, checking, submitting, author, title, status, sortedData, date, query, rating, comment, searchComplete, searchError, searchForm, searchloading, form, books, currentlyReading, searchButton} = this.state;
     const allBooks = sortedData.filter(book => book.username === this.state.username)
     const bookCount = sortedData.filter(book => book.username === this.state.username).length;
     let currentyearBooks = sortedData.filter(one => one.username === this.state.username && one.title && one.status === "Finished" && moment(one.date).isSameOrAfter('2022-01-01'));
@@ -998,6 +1072,13 @@ class BookForm extends React.Component {
                                 <label >Finished on:</label><br />
                                 <DatePicker selected={date} onChange={this.handleDateChange}  />                                
                             </Col>
+                            <Row>
+                                <Col md={12}>
+                                    <label>Comments: <br />
+                                        <textarea  value={comment === 'null' ? '' : comment} onChange={this.updateComment} />
+                                    </label>
+                                </Col>
+                            </Row>
                             </React.Fragment>
                             }
                             
