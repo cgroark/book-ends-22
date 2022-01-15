@@ -523,15 +523,6 @@ a:hover {
   padding: 0.25rem !important;
 }
 
-h2#friend-name {
-  font-size: 2.4rem;
-  border-top: none;
-  font-weight: 700;
-  background-color: #9B326E;
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
 
 @media only screen and (max-width: 576px) {
   .book-card img {
@@ -1093,11 +1084,11 @@ div.App {
   }
 }
 .accordion .card .card-header button{
-  font-size: 1.1rem;
+  color: $color-blue;
+  font-size: 1.4rem;
   background-color: #fff;
   border: none;
   padding: 5px 0 0;
-  color: black;
   &:focus{
     outline: none;
   }
@@ -1542,8 +1533,9 @@ a:hover{
 h2#friend-name{
   font-size: 2.4rem;
   border-top: none;
-  background-color: $color-purple;
-  color: white;
+  border-bottom: 5px solid $color-blue;
+  background-color: transparent;
+  color: black;
   padding: 20px;
   text-align: center;
 }
@@ -1587,7 +1579,6 @@ h2#friend-name{
     border: none;
     .card-header{
       padding: 0;
-       color: black;
       background-color: transparent !important;
       .btn{
         padding: 0;
@@ -1759,6 +1750,7 @@ input#edit, input.add-button{
   font-weight: bold;
   border: 3px solid white;
   color: white;
+  margin-top: 10px;
 }
 input.add-button{
   display: block;

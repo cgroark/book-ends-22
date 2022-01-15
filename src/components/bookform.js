@@ -576,20 +576,6 @@ class BookForm extends React.Component {
                 <div >
                     <h4>{each.author}</h4>
                 </div>
-                {each.comment !== 'null' &&
-                                <Accordion defaultActiveKey="0">
-                                        <Card>
-                                            <Card.Header>
-                                                <CustomToggle eventKey={each.id}>
-                                                    Comments
-                                                </CustomToggle>
-                                            </Card.Header>
-                                            <Accordion.Collapse eventKey={each.id}>
-                                                <Card.Body><p>{each.comment}</p></Card.Body>
-                                            </Accordion.Collapse>
-                                        </Card>
-                                </Accordion>  
-                            }
                     {!this.state.form &&
                         <div>
                             <label htmlFor="edit"></label>
@@ -637,26 +623,6 @@ class BookForm extends React.Component {
                             <h4>{each.author}</h4>
                             <p className="card-smaller">{each.status} {moment(each.date).isValid() ? moment(each.date).format('MMM D YYYY'): ""} </p>
                             <p className="card-smaller">{each.rating === 'select-rating' ? '' : each.rating} </p>
-                            {each.comment !== 'null' &&
-                                <Accordion defaultActiveKey="0">
-                                        <Card>
-                                            <Card.Header>
-                                                <CustomToggle eventKey={each.id}>
-                                                    Comments
-                                                </CustomToggle>
-                                            </Card.Header>
-                                            <Accordion.Collapse eventKey={each.id}>
-                                                <Card.Body><p>{each.comment}</p></Card.Body>
-                                            </Accordion.Collapse>
-                                        </Card>
-                                </Accordion>  
-                            }
-                            {!this.state.form &&
-                                <div>
-                                    <label htmlFor="edit"></label>
-                                    <input type="submit" value="Update" id="edit" onClick={(e) => this.updateBook(each,e)}></input>
-                                </div>
-                            }
                         </Col>
                         <Col xs={4}>
                             {each.image && each.image !== 'null' ?
@@ -664,10 +630,22 @@ class BookForm extends React.Component {
                                 :
                                 <i className="fa fa-book" aria-hidden="true"></i>
                             }
-                            
                         </Col>
-                        
                     </Row>
+                    {each.comment !== 'null' &&
+                        <Accordion defaultActiveKey="0">
+                                <Card>
+                                    <Card.Header>
+                                        <CustomToggle eventKey={each.id}>
+                                            Comments
+                                        </CustomToggle>
+                                    </Card.Header>
+                                    <Accordion.Collapse eventKey={each.id}>
+                                        <Card.Body><p>{each.comment}</p></Card.Body>
+                                    </Accordion.Collapse>
+                                </Card>
+                        </Accordion>  
+                    }
                     {each.overview && each.overview !== 'null' ? 
                         <Accordion defaultActiveKey="0">
                                     <Card>
@@ -682,7 +660,15 @@ class BookForm extends React.Component {
                                     </Card>
                         </Accordion>  
                         : 
-                    <p>(No summary available)</p> }
+                        <p>(No summary available)</p> 
+                    }
+                   
+                    {!this.state.form &&
+                        <div>
+                            <label htmlFor="edit"></label>
+                            <input type="submit" value="Update" id="edit" onClick={(e) => this.updateBook(each,e)}></input>
+                        </div>
+                    }
                 </Col>
 
         )
@@ -697,26 +683,6 @@ class BookForm extends React.Component {
                             <h4>{each.author}</h4>
                             <p className="card-smaller">{each.status} {moment(each.date).isValid() ? moment(each.date).format('MMM D YYYY'): ""} </p>
                             <p className="card-smaller">{each.rating === 'select-rating' ? '' : each.rating} </p>
-                            {each.comment !== 'null' &&
-                                <Accordion defaultActiveKey="0">
-                                        <Card>
-                                            <Card.Header>
-                                                <CustomToggle eventKey={each.id}>
-                                                    Comments
-                                                </CustomToggle>
-                                            </Card.Header>
-                                            <Accordion.Collapse eventKey={each.id}>
-                                                <Card.Body><p>{each.comment}</p></Card.Body>
-                                            </Accordion.Collapse>
-                                        </Card>
-                                </Accordion>  
-                            }
-                            {!this.state.form &&
-                                <div>
-                                    <label htmlFor="edit"></label>
-                                    <input type="submit" value="Update" id="edit" onClick={(e) => this.updateBook(each,e)}></input>
-                                </div>
-                            }
                         </Col>
                         <Col xs={4}>
                             {each.image && each.image !== 'null' ?
@@ -728,6 +694,20 @@ class BookForm extends React.Component {
                         </Col>
                         
                     </Row>
+                    {each.comment !== 'null' &&
+                        <Accordion defaultActiveKey="0">
+                                <Card>
+                                    <Card.Header>
+                                        <CustomToggle eventKey={each.id}>
+                                            Comments
+                                        </CustomToggle>
+                                    </Card.Header>
+                                    <Accordion.Collapse eventKey={each.id}>
+                                        <Card.Body><p>{each.comment}</p></Card.Body>
+                                    </Accordion.Collapse>
+                                </Card>
+                        </Accordion>  
+                    }
                     {each.overview && each.overview !== 'null' ? 
                         <Accordion defaultActiveKey="0">
                                     <Card>
@@ -742,7 +722,15 @@ class BookForm extends React.Component {
                                     </Card>
                         </Accordion>  
                         : 
-                    <p>(No summary available)</p> }
+                        <p>(No summary available)</p> 
+                    }
+                   
+                    {!this.state.form &&
+                        <div>
+                            <label htmlFor="edit"></label>
+                            <input type="submit" value="Update" id="edit" onClick={(e) => this.updateBook(each,e)}></input>
+                        </div>
+                    }
                 </Col>
 
         )
@@ -757,26 +745,7 @@ class BookForm extends React.Component {
                             <h4>{each.author}</h4>
                             <p className="card-smaller">{each.status} {moment(each.date).isValid() ? moment(each.date).format('MMM D YYYY'): ""} </p>
                             <p className="card-smaller">{each.rating === 'select-rating' ? '' : each.rating} </p>
-                            {each.comment !== 'null' &&
-                                <Accordion defaultActiveKey="0">
-                                        <Card>
-                                            <Card.Header>
-                                                <CustomToggle eventKey={each.id}>
-                                                    Comments
-                                                </CustomToggle>
-                                            </Card.Header>
-                                            <Accordion.Collapse eventKey={each.id}>
-                                                <Card.Body><p>{each.comment}</p></Card.Body>
-                                            </Accordion.Collapse>
-                                        </Card>
-                                </Accordion>  
-                            }
-                            {!this.state.form &&
-                                <div>
-                                    <label htmlFor="edit"></label>
-                                    <input type="submit" value="Update" id="edit" onClick={(e) => this.updateBook(each,e)}></input>
-                                </div>
-                            }
+                           
                         </Col>
                         <Col xs={4}>
                             {each.image && each.image !== 'null' ?
@@ -788,6 +757,20 @@ class BookForm extends React.Component {
                         </Col>
                         
                     </Row>
+                    {each.comment !== 'null' &&
+                        <Accordion defaultActiveKey="0">
+                                <Card>
+                                    <Card.Header>
+                                        <CustomToggle eventKey={each.id}>
+                                            Comments
+                                        </CustomToggle>
+                                    </Card.Header>
+                                    <Accordion.Collapse eventKey={each.id}>
+                                        <Card.Body><p>{each.comment}</p></Card.Body>
+                                    </Accordion.Collapse>
+                                </Card>
+                        </Accordion>  
+                    }
                     {each.overview && each.overview !== 'null' ? 
                         <Accordion defaultActiveKey="0">
                                     <Card>
@@ -802,7 +785,15 @@ class BookForm extends React.Component {
                                     </Card>
                         </Accordion>  
                         : 
-                    <p>(No summary available)</p> }
+                        <p>(No summary available)</p> 
+                    }
+                   
+                    {!this.state.form &&
+                        <div>
+                            <label htmlFor="edit"></label>
+                            <input type="submit" value="Update" id="edit" onClick={(e) => this.updateBook(each,e)}></input>
+                        </div>
+                    }
                 </Col>
 
         )
