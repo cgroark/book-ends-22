@@ -434,7 +434,7 @@ code {
   text-align: right;
 }
 
-.navigation a {
+.navigation a, .navigation button {
   margin: 0 4px;
   font-size: 1.3em;
   display: inline-block;
@@ -904,7 +904,7 @@ form.search-form input[type="text"] {
     font-size: 3.9rem;
     text-shadow: 2px 2px black;
   }
-  .navigation a {
+  .navigation a, .navigation button {
     margin: 0 6px;
     font-size: 1em;
     display: inline-block;
@@ -967,27 +967,7 @@ form.search-form input[type="text"] {
   }
 }
 
-@media only screen and (max-width: 462px) {
-  .navigation a {
-    margin: 0px 3.6px 0 0;
-    font-size: .8em;
-    padding: 3px;
-  }
-}
 
-@media only screen and (max-width: 370px) {
-  .navigation a {
-    margin: 0px 4.6px 0 0;
-    font-size: .7em;
-    padding: 3px 0 3px;
-  }
-  .App-header {
-    height: 100px;
-  }
-  .App-header h1 {
-    font-size: 2.5rem;
-  }
-}
 
 footer {
   height: 50px;
@@ -1455,7 +1435,6 @@ code {
     }
     a, button{
       margin: 0 4px;
-      font-size: 1.3em;
       display: inline-block;
       padding: 10px;
       color: $color-purple !important;
@@ -1648,6 +1627,9 @@ form{
     color: $color-purple; 
     font-size: 1.5rem;
     margin-bottom: 0;
+  }
+  select{
+    color: black;
   }
 }
 input[type="submit"].manual{
@@ -1914,15 +1896,7 @@ form.search-form{
       text-shadow: 2px 2px black;
     }
   } 
-  .navigation a{
-      margin: 0 6px;
-      font-size: 1em;
-      display: inline-block;
-      padding: 4px;
-      color: $color-purple;
-      border-bottom: 2px solid white;
-      text-decoration: none;
-    }
+
   input[type="submit"].delete{
       margin-top: 30px;
       float: none;
@@ -1989,27 +1963,28 @@ form.search-form{
     }
   }
 }
-
 @media only screen and (max-width: 462px) {
-  .navigation a{
+  .navigation a, .navigation button {
     margin: 0px 3.6px 0 0;
     font-size: .8em;
     padding: 3px;
   }
 }
+
 @media only screen and (max-width: 370px) {
-  .navigation a{
+  .navigation a, .navigation button {
     margin: 0px 4.6px 0 0;
     font-size: .7em;
     padding: 3px 0 3px;
   }
-  .App-header{   
-    height: 100px; 
-    h1{
-      font-size: 2.5rem;
-    }
-  } 
+  .App-header {
+    height: 100px;
+  }
+  .App-header h1 {
+    font-size: 2.5rem;
+  }
 }
+
 footer{
   height: 50px;
   background: $color-darkblue;
