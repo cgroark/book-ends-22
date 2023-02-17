@@ -318,7 +318,7 @@ class BookForm extends React.Component {
         });
     }
     }
-    updateBook = (each, e) =>{  
+    updateBook = (each, e) =>{ 
         var updateRating = each.rating === 'select-rating' ? 'select-rating' : each.rating;
         var dateUpdating = each.status === 'Finished' ? moment(each.date).toDate() : moment().toDate();
         this.setState({
@@ -615,6 +615,7 @@ class BookForm extends React.Component {
     }
     renderCurrentYearFinished(){
         let currentYearFinished = this.state.sortedData.filter(one => one.username === this.state.username && one.title && one.status === "Finished" && moment(one.date).isSameOrAfter('2022-01-01'))
+
         return currentYearFinished.sort((b,a) => new moment(a.date) - new moment(b.date)).map((each) => 
                 <Col key={each.id} className="book-card" md={4} sm={6}>
                      <h3><em>{each.title}</em>&nbsp;{each.format === 'Audio' ? <i className="fa fa-headphones" aria-hidden="true"></i> : <i className="fa fa-book" aria-hidden="true"></i>}</h3>
@@ -632,7 +633,7 @@ class BookForm extends React.Component {
                             }
                         </Col>
                     </Row>
-                    {each.comment !== 'null' &&
+                    {each.comment !== 'null' && each.comment !== undefined &&
                         <Accordion defaultActiveKey="0">
                                 <Card>
                                     <Card.Header>
@@ -694,7 +695,7 @@ class BookForm extends React.Component {
                         </Col>
                         
                     </Row>
-                    {each.comment !== 'null' &&
+                    {each.comment !== 'null' && each.comment !== undefined &&
                         <Accordion defaultActiveKey="0">
                                 <Card>
                                     <Card.Header>

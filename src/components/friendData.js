@@ -33,7 +33,6 @@ class FriendData extends React.Component {
         }
     }
     componentDidMount =(props) => {
-        console.log('friendname', this.props.friendname)
         this.setState({
             friendString: this.props.friendname.toLowerCase(),
             firstName: (this.props.friendname.toLowerCase().split('-')[0])[0].toUpperCase() + this.props.friendname.toLowerCase().split('-')[0].slice(1)
@@ -49,7 +48,6 @@ class FriendData extends React.Component {
                     allData: json,
                     searchloading: false
                 })
-                console.log('friend data', json)
             }).then( () => {
                 let first = this.state.friendString.split('-')[0];
                 let last = this.state.friendString.split('-')[1];
@@ -59,7 +57,6 @@ class FriendData extends React.Component {
                 this.setState({
                     friendData: friendData
                 });
-                console.log('friend data parsed', friendData)
             })
     }
     renderReading = () => {
@@ -132,20 +129,20 @@ class FriendData extends React.Component {
                 </Col>
                 
             </Row>
-            {each.comment !== 'null' &&
-                                    <Accordion defaultActiveKey="0">
-                                            <Card>
-                                                <Card.Header>
-                                                    <CustomToggle eventKey={each.id}>
-                                                        Comments
-                                                    </CustomToggle>
-                                                </Card.Header>
-                                                <Accordion.Collapse eventKey={each.id}>
-                                                    <Card.Body><p>{each.comment}</p></Card.Body>
-                                                </Accordion.Collapse>
-                                            </Card>
-                                    </Accordion>  
-                                }
+            {each.comment !== 'null' && each.comment !== undefined &&
+                    <Accordion defaultActiveKey="0">
+                            <Card>
+                                <Card.Header>
+                                    <CustomToggle eventKey={each.id}>
+                                        Comments
+                                    </CustomToggle>
+                                </Card.Header>
+                                <Accordion.Collapse eventKey={each.id}>
+                                    <Card.Body><p>{each.comment}</p></Card.Body>
+                                </Accordion.Collapse>
+                            </Card>
+                    </Accordion>  
+                }
             {each.overview && each.overview !== 'null' ? 
                 <Accordion defaultActiveKey="0">
                             <Card>
@@ -186,20 +183,20 @@ class FriendData extends React.Component {
                 </Col>
                 
             </Row>
-            {each.comment !== 'null' &&
-                                    <Accordion defaultActiveKey="0">
-                                            <Card>
-                                                <Card.Header>
-                                                    <CustomToggle eventKey={each.id}>
-                                                        Comments
-                                                    </CustomToggle>
-                                                </Card.Header>
-                                                <Accordion.Collapse eventKey={each.id}>
-                                                    <Card.Body><p>{each.comment}</p></Card.Body>
-                                                </Accordion.Collapse>
-                                            </Card>
-                                    </Accordion>  
-                                }
+            {each.comment !== 'null' && each.comment !== undefined &&                
+                <Accordion defaultActiveKey="0">
+                        <Card>
+                            <Card.Header>
+                                <CustomToggle eventKey={each.id}>
+                                    Comments
+                                </CustomToggle>
+                            </Card.Header>
+                            <Accordion.Collapse eventKey={each.id}>
+                                <Card.Body><p>{each.comment}</p></Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                </Accordion>  
+            }
             {each.overview && each.overview !== 'null' ? 
                 <Accordion defaultActiveKey="0">
                             <Card>
@@ -241,20 +238,20 @@ class FriendData extends React.Component {
                 </Col>
                 
             </Row>
-            {each.comment !== 'null' &&
-                                    <Accordion defaultActiveKey="0">
-                                            <Card>
-                                                <Card.Header>
-                                                    <CustomToggle eventKey={each.id}>
-                                                        Comments
-                                                    </CustomToggle>
-                                                </Card.Header>
-                                                <Accordion.Collapse eventKey={each.id}>
-                                                    <Card.Body><p>{each.comment}</p></Card.Body>
-                                                </Accordion.Collapse>
-                                            </Card>
-                                    </Accordion>  
-                                }
+            {each.comment !== 'null' && each.comment !== undefined &&                
+                <Accordion defaultActiveKey="0">
+                        <Card>
+                            <Card.Header>
+                                <CustomToggle eventKey={each.id}>
+                                    Comments
+                                </CustomToggle>
+                            </Card.Header>
+                            <Accordion.Collapse eventKey={each.id}>
+                                <Card.Body><p>{each.comment}</p></Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                </Accordion>  
+            }
             {each.overview && each.overview !== 'null' ? 
                 <Accordion defaultActiveKey="0">
                             <Card>
