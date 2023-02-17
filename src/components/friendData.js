@@ -109,7 +109,7 @@ class FriendData extends React.Component {
         )
     }
     renderCurrentYearFinished(){
-        let currentYearFinished = this.state.friendData.filter(one => one.title && one.status === "Finished" && moment(one.date).isSameOrAfter('2022-01-01'))
+        let currentYearFinished = this.state.friendData.filter(one => one.title && one.status === "Finished" && moment(one.date).isSameOrAfter('2023-01-01'))
         return currentYearFinished.sort((b,a) => new moment(a.date) - new moment(b.date)).map((each) => 
         <Col key={each.id} className="book-card" md={4} sm={6}>
         <h3><em>{each.title}</em>&nbsp;{each.format === 'Audio' ? <i className="fa fa-headphones" aria-hidden="true"></i> : <i className="fa fa-book" aria-hidden="true"></i>}</h3>
@@ -143,6 +143,60 @@ class FriendData extends React.Component {
                             </Card>
                     </Accordion>  
                 }
+            {each.overview && each.overview !== 'null' ? 
+                <Accordion defaultActiveKey="0">
+                            <Card>
+                                <Card.Header>
+                                <CustomToggle eventKey={each.id}>
+                                    Summary
+                                </CustomToggle>
+                                </Card.Header>
+                                <Accordion.Collapse eventKey={each.id}>
+                                    <Card.Body><p>{each.overview}</p></Card.Body>
+                                </Accordion.Collapse>
+                            </Card>
+                </Accordion>  
+                : 
+                <p>(No summary available)</p> 
+            }
+            <p className="card-smaller"><a className="thrift-link" href={"https://www.thriftbooks.com/browse/?b.search="+each.title+' ' +each.author} target="_blank" rel="noopener noreferrer"><i className="fa fa-shopping-cart" aria-hidden="true"></i></a></p>
+        </Col>
+        )
+    }
+    renderFinishedDatatwentytwentytwo(){
+        let twentytwentyTwoBooks = this.state.friendData.filter(one => one.title && one.status === "Finished" && moment(one.date).isBetween('2022-01-01', '2022-12-31'))
+        return twentytwentyTwoBooks.sort((b,a) => new moment(a.date) - new moment(b.date)).map((each) => 
+        <Col key={each.id} className="book-card" md={4} sm={6}>
+        <h3><em>{each.title}</em>&nbsp;{each.format === 'Audio' ? <i className="fa fa-headphones" aria-hidden="true"></i> : <i className="fa fa-book" aria-hidden="true"></i>}</h3>
+            <Row>
+                <Col xs={8}>
+                    <h4>{each.author}</h4>
+                    <p className="card-smaller">{each.status} {moment(each.date).isValid() ? moment(each.date).format('MMM D YYYY'): ""} </p>
+                    <p className="card-smaller">{each.rating} </p>
+                </Col>
+                <Col xs={4}>
+                    {each.image && each.image !== 'null' ?
+                        <img src={each.image} alt={each.title} />
+                        :
+                        <i className="fa fa-book" aria-hidden="true"></i>
+                    }
+                </Col>
+                
+            </Row>
+            {each.comment !== 'null' && each.comment !== undefined &&                
+                <Accordion defaultActiveKey="0">
+                        <Card>
+                            <Card.Header>
+                                <CustomToggle eventKey={each.id}>
+                                    Comments
+                                </CustomToggle>
+                            </Card.Header>
+                            <Accordion.Collapse eventKey={each.id}>
+                                <Card.Body><p>{each.comment}</p></Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                </Accordion>  
+            }
             {each.overview && each.overview !== 'null' ? 
                 <Accordion defaultActiveKey="0">
                             <Card>
@@ -352,9 +406,11 @@ class FriendData extends React.Component {
     const { friendData, searchloading, firstName} = this.state;
     const allBooks = friendData;
     const bookCount = friendData.length;
-    let currentyearBooks = friendData.filter(one => one.title && one.status === "Finished" && moment(one.date).isSameOrAfter('2022-01-01'));
+    let currentyearBooks = friendData.filter(one => one.title && one.status === "Finished" && moment(one.date).isSameOrAfter('2023-01-01'));
     let twentytwentyBooks = friendData.filter(one => one.title && one.status === "Finished" && moment(one.date).isBefore('2021-01-01'));
     let twentytwentyOneBooks = friendData.filter(one => one.title && one.status === "Finished" && moment(one.date).isBetween('2021-01-01', '2021-12-31'))
+    let twentytwentyTwoBooks = friendData.filter(one => one.title && one.status === "Finished" && moment(one.date).isBetween('2022-01-01', '2022-12-31'))
+
     return(
             <div className="main-body">
                 {searchloading && 
@@ -415,15 +471,33 @@ class FriendData extends React.Component {
                                     {this.renderCurrentYearFinished()}
                                 </Row>
                             }
-                            {twentytwentyOneBooks.length > 0 &&
-                                <Accordion className="past-year-books" defaultActiveKey="0" id="twentytwenty" >
+                            {twentytwentyTwoBooks.length > 0 &&
+                                <Accordion className="past-year-books" defaultActiveKey="0" id="twentytwentytwo" >
                                 <Card >
                                     <Card.Header>
-                                    <CustomToggle eventKey='2020books'>
+                                    <CustomToggle eventKey='2022books'>
+                                        2022 Books
+                                    </CustomToggle>
+                                    </Card.Header>
+                                    <Accordion.Collapse eventKey='2022books'>
+                                        <Card.Body>
+                                            <Row >
+                                                {this.renderFinishedDatatwentytwentytwo()}
+                                            </Row>
+                                        </Card.Body>
+                                    </Accordion.Collapse>
+                                </Card>
+                                </Accordion>  
+                            }
+                            {twentytwentyOneBooks.length > 0 &&
+                                <Accordion className="past-year-books" defaultActiveKey="0" id="twentytwentyone" >
+                                <Card >
+                                    <Card.Header>
+                                    <CustomToggle eventKey='2021books'>
                                         2021 Books
                                     </CustomToggle>
                                     </Card.Header>
-                                    <Accordion.Collapse eventKey='2020books'>
+                                    <Accordion.Collapse eventKey='2021books'>
                                         <Card.Body>
                                             <Row >
                                                 {this.renderFinishedDatatwentytwentyone()}

@@ -614,8 +614,7 @@ class BookForm extends React.Component {
         )
     }
     renderCurrentYearFinished(){
-        let currentYearFinished = this.state.sortedData.filter(one => one.username === this.state.username && one.title && one.status === "Finished" && moment(one.date).isSameOrAfter('2022-01-01'))
-
+        let currentYearFinished = this.state.sortedData.filter(one => one.username === this.state.username && one.title && one.status === "Finished" && moment(one.date).isSameOrAfter('2023-01-01'))
         return currentYearFinished.sort((b,a) => new moment(a.date) - new moment(b.date)).map((each) => 
                 <Col key={each.id} className="book-card" md={4} sm={6}>
                      <h3><em>{each.title}</em>&nbsp;{each.format === 'Audio' ? <i className="fa fa-headphones" aria-hidden="true"></i> : <i className="fa fa-book" aria-hidden="true"></i>}</h3>
@@ -799,6 +798,69 @@ class BookForm extends React.Component {
 
         )
     }
+    renderFinishedDatatwentytwentytwo(){
+        let twentytwentyTwoBooks = this.state.sortedData.filter(one => one.username === this.state.username && one.title && one.status === "Finished" && moment(one.date).isBetween('2022-01-01', '2022-12-31'))
+        return twentytwentyTwoBooks.sort((b,a) => new moment(a.date) - new moment(b.date)).map((each) => 
+                <Col key={each.id} className="book-card" md={4} sm={6}>
+                     <h3><em>{each.title}</em>&nbsp;{each.format === 'Audio' ? <i className="fa fa-headphones" aria-hidden="true"></i> : <i className="fa fa-book" aria-hidden="true"></i>}</h3>
+                    <Row>
+                        <Col xs={8}>
+                            <h4>{each.author}</h4>
+                            <p className="card-smaller">{each.status} {moment(each.date).isValid() ? moment(each.date).format('MMM D YYYY'): ""} </p>
+                            <p className="card-smaller">{each.rating === 'select-rating' ? '' : each.rating} </p>
+                           
+                        </Col>
+                        <Col xs={4}>
+                            {each.image && each.image !== 'null' ?
+                                <img src={each.image} alt={each.title} />
+                                :
+                                <i className="fa fa-book" aria-hidden="true"></i>
+                            }
+                            
+                        </Col>
+                        
+                    </Row>
+                    {each.comment !== 'null' &&
+                        <Accordion defaultActiveKey="0">
+                                <Card>
+                                    <Card.Header>
+                                        <CustomToggle eventKey={each.id}>
+                                            Comments
+                                        </CustomToggle>
+                                    </Card.Header>
+                                    <Accordion.Collapse eventKey={each.id}>
+                                        <Card.Body><p>{each.comment}</p></Card.Body>
+                                    </Accordion.Collapse>
+                                </Card>
+                        </Accordion>  
+                    }
+                    {each.overview && each.overview !== 'null' ? 
+                        <Accordion defaultActiveKey="0">
+                                    <Card>
+                                        <Card.Header>
+                                            <CustomToggle eventKey={each.id}>
+                                                Summary
+                                            </CustomToggle>
+                                        </Card.Header>
+                                        <Accordion.Collapse eventKey={each.id}>
+                                            <Card.Body><p>{each.overview}</p></Card.Body>
+                                        </Accordion.Collapse>
+                                    </Card>
+                        </Accordion>  
+                        : 
+                        <p>(No summary available)</p> 
+                    }
+                   
+                    {!this.state.form &&
+                        <div>
+                            <label htmlFor="edit"></label>
+                            <input type="submit" value="Update" id="edit" onClick={(e) => this.updateBook(each,e)}></input>
+                        </div>
+                    }
+                </Col>
+
+        )
+    }
     renderWantData(){
         return this.state.sortedData.filter(one => one.username === this.state.username && one.title && one.status === "Want-to-read").map((each) => 
                 <Col key={each.id} className="book-card" md={4} sm={6}>
@@ -903,9 +965,11 @@ class BookForm extends React.Component {
     const { completeAdd, completeEdit, format, checking, submitting, author, title, status, sortedData, date, query, rating, comment, searchComplete, searchError, searchForm, searchloading, form, books, currentlyReading, searchButton} = this.state;
     const allBooks = sortedData.filter(book => book.username === this.state.username)
     const bookCount = sortedData.filter(book => book.username === this.state.username).length;
-    let currentyearBooks = sortedData.filter(one => one.username === this.state.username && one.title && one.status === "Finished" && moment(one.date).isSameOrAfter('2022-01-01'));
+    let currentyearBooks = sortedData.filter(one => one.username === this.state.username && one.title && one.status === "Finished" && moment(one.date).isSameOrAfter('2023-01-01'));
     let twentytwentyBooks = sortedData.filter(one => one.username === this.state.username && one.title && one.status === "Finished" && moment(one.date).isBefore('2021-01-01'));
     let twentytwentyOneBooks = sortedData.filter(one => one.username === this.state.username && one.title && one.status === "Finished" && moment(one.date).isBetween('2021-01-01', '2021-12-31'))
+    let twentytwentyTwoBooks = sortedData.filter(one => one.username === this.state.username && one.title && one.status === "Finished" && moment(one.date).isBetween('2022-01-01', '2022-12-31'))
+
         return(
             <div className="main-body">
                 {searchButton &&
@@ -1110,6 +1174,24 @@ class BookForm extends React.Component {
                                 <Row >
                                     {this.renderCurrentYearFinished()}
                                 </Row>
+                            }
+                            {twentytwentyTwoBooks.length > 0 &&
+                                <Accordion defaultActiveKey="0" className="past-year-books" id="twentytwentytwo" >
+                                <Card >
+                                    <Card.Header>
+                                        <CustomToggle eventKey='2022books'>
+                                            2022 Books
+                                        </CustomToggle>
+                                    </Card.Header>
+                                    <Accordion.Collapse eventKey='2022books'>
+                                        <Card.Body>
+                                            <Row >
+                                            {this.renderFinishedDatatwentytwentytwo()}
+                                            </Row>
+                                        </Card.Body>
+                                    </Accordion.Collapse>
+                                </Card>
+                                </Accordion>  
                             }
                             {twentytwentyOneBooks.length > 0 &&
                                 <Accordion defaultActiveKey="0" className="past-year-books" id="twentytwentyone" >
